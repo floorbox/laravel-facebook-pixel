@@ -1,9 +1,9 @@
 # Meta Pixel integration for Laravel
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/combindma/laravel-facebook-pixel.svg?style=flat-square)](https://packagist.org/packages/combindma/laravel-facebook-pixel)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/combindma/laravel-facebook-pixel/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/combindma/laravel-facebook-pixel/actions?query=workflow%3ATests+branch%3Amaster)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/combindma/laravel-facebook-pixel/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/combindma/laravel-facebook-pixel/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
-[![Total Downloads](https://img.shields.io/packagist/dt/combindma/laravel-facebook-pixel.svg?style=flat-square)](https://packagist.org/packages/combindma/laravel-facebook-pixel)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/Floorbox/laravel-facebook-pixel.svg?style=flat-square)](https://packagist.org/packages/Floorbox/laravel-facebook-pixel)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/Floorbox/laravel-facebook-pixel/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/Floorbox/laravel-facebook-pixel/actions?query=workflow%3ATests+branch%3Amaster)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/Floorbox/laravel-facebook-pixel/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/Floorbox/laravel-facebook-pixel/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amaster)
+[![Total Downloads](https://img.shields.io/packagist/dt/Floorbox/laravel-facebook-pixel.svg?style=flat-square)](https://packagist.org/packages/Floorbox/laravel-facebook-pixel)
 
 A Complete Meta pixel implementation for your Laravel application.
 
@@ -45,7 +45,7 @@ Refer to [Conversions API Guide](https://developers.facebook.com/docs/marketing-
 You can install the package via composer:
 
 ```bash
-composer require combindma/laravel-facebook-pixel
+composer require floorbox/laravel-facebook-pixel
 ```
 
 Optionally, you can publish the views using:
@@ -140,7 +140,7 @@ To add an event, use the `track()` function.
 
 ```php
 // CheckoutController.php
-use Combindma\FacebookPixel\Facades\MetaPixel;
+use Floorbox\FacebookPixel\Facades\MetaPixel;
 
 public function index()
 {
@@ -181,7 +181,7 @@ The package can also set event to render on the next request. This is useful for
 
 ```php
 // ContactController.php
-use Combindma\FacebookPixel\Facades\MetaPixel;
+use Floorbox\FacebookPixel\Facades\MetaPixel;
 
 public function postContact()
 {
@@ -222,7 +222,7 @@ After a form submit, the following event will be parsed on the contact page:
 ### Available Methods
 
 ```php
-use Combindma\FacebookPixel\Facades\MetaPixel;
+use Floorbox\FacebookPixel\Facades\MetaPixel;
 
 // Retrieve your Pixel id
 $id = MetaPixel::pixelId();
@@ -251,7 +251,7 @@ MetaPixel::clear();
 You can also track a specific custom event on your website. This feature is not available for flashed events.
 
 ```php
-use Combindma\FacebookPixel\Facades\MetaPixel;
+use Floorbox\FacebookPixel\Facades\MetaPixel;
 
 // In your controller
 MetaPixel::trackCustom('CUSTOM-EVENT-NAME', ['custom_parameter' => 'ABC', 'value' => 10.00, 'currency' => 'USD']);
@@ -305,7 +305,7 @@ You can disable it by adding META_PIXEL_ADVANCED_MATCHING_ENABLED=false in your 
 Adding events to pages can become a repetitive process. Since this package isn't supposed to be opinionated on what your events should look like, the MetaPixel is macroable.
 
 ```php
-use Combindma\FacebookPixel\Facades\MetaPixel;
+use Floorbox\FacebookPixel\Facades\MetaPixel;
 
 //include this in your macrobale file
 MetaPixel::macro('purchase', function ($product) {
@@ -329,7 +329,7 @@ For every request yous should specify a unique event id for handling Pixel Dupli
 This is how you can start:
 
 ```php
-use Combindma\FacebookPixel\Facades\MetaPixel;
+use Floorbox\FacebookPixel\Facades\MetaPixel;
 use FacebookAds\Object\ServerSide\Content;
 use FacebookAds\Object\ServerSide\CustomData;
 use FacebookAds\Object\ServerSide\DeliveryCategory;
@@ -384,7 +384,7 @@ Please review [our security policy](../../security/policy) on how to report secu
 
 ## Credits
 
-- [Combind](https://github.com/Combindma)
+- [Combind](https://github.com/Floorbox)
 - [All Contributors](../../contributors)
 
 ## License
