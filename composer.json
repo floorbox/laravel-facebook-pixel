@@ -1,12 +1,12 @@
 {
-    "name": "combindma/laravel-facebook-pixel",
+    "name": "floorbox/laravel-facebook-pixel",
     "description": "Meta pixel integration for Laravel",
     "keywords": [
         "combindma",
         "meta-pixel",
         "laravel"
     ],
-    "homepage": "https://github.com/combindma/laravel-facebook-pixel",
+    "homepage": "https://github.com/floorbox/laravel-facebook-pixel",
     "license": "MIT",
     "authors": [
         {
