@@ -24,6 +24,8 @@ class MetaPixel
 
     private bool $enabled;
 
+    private bool $logEnabled;
+
     private bool $advancedMatchingEnabled;
 
     private string $pixelId;
@@ -45,6 +47,7 @@ class MetaPixel
     public function __construct()
     {
         $this->enabled = config('meta-pixel.enabled');
+        $this->logEnabled = config('meta-pixel.log_enabled');
         $this->advancedMatchingEnabled = config('meta-pixel.advanced_matching_enabled');
         $this->pixelId = config('meta-pixel.pixel_id');
         $this->token = config('meta-pixel.token');
@@ -157,7 +160,9 @@ class MetaPixel
         }
 
         $api = Api::init(null, null, $this->token);
-        $api->setLogger(new CurlLogger);
+        if ($this->logEnabled) {
+            $api->setLogger(new CurlLogger);
+        }
 
         $event = (new Event)
             ->setEventName($eventName)
