@@ -31,4 +31,9 @@ return [
      * This is used to test server events
      */
     'test_event_code' => env('META_TEST_EVENT_CODE'),
+
+    /*
+     * Enable or disable logging. Useful for debugging.
+     */
+    'log_enabled' => env('META_PIXEL_LOG_ENABLED', false),
 ];
