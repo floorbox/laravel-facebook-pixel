@@ -152,7 +152,7 @@ class MetaPixel
      */
     public function send(string $eventName, string $eventID, CustomData $customData, ?UserData $userData = null): ?EventResponse
     {
-        if (!$this->isEnabled()) {
+        if (! $this->isEnabled()) {
             return null;
         }
         if (empty($this->token())) {
