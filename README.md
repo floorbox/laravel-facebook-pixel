@@ -81,6 +81,11 @@ return [
     'token' => env('META_PIXEL_TOKEN', ''),
 
     /*
+     * Enable or disable Meta SDK crash reporting for server events.
+     */
+    'crash_reporting_enabled' => env('META_PIXEL_CRASH_REPORTING_ENABLED', false),
+
+    /*
      * Enable or disable advanced matching. Useful for adjusting user privacy.
      */
     'advanced_matching_enabled' => env('META_PIXEL_ADVANCED_MATCHING_ENABLED', true),

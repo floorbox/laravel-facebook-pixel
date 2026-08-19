@@ -159,7 +159,7 @@ class MetaPixel
             throw new Exception('You need to set a token in your .env file to use the Conversions API.');
         }
 
-        $api = Api::init(null, null, $this->token, false);
+        $api = Api::init(null, null, $this->token, config('meta-pixel.crash_reporting_enabled', false));
         if ($this->logEnabled) {
             $api->setLogger(new CurlLogger);
         }
